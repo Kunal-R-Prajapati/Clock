@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <section class="clock" id="clock">
+        <header>
+            <h1>
+                Current Time 
+            </h1>
+            <div class="date" id="date">
+            </div>
+        </header>
+        <ul>
+            <li id="time"></li>
+        </ul>
+    </section>
+    <section class="stopwatch" id="stopwatch">
+        <header>
+            <h1>
+                Stopwatch
+            </h1>
+        </header>
+        <div class="controls" id="stop-controls">
+            <button id="Start" data-action="Start">Start</button>
+            <button id="Stop" data-action="Stop">Stop</button>
+            <button id="Reset" data-action="Reset">Reset</button>
+        </div>
+        <ul id="time-container">
+            <li id="stop-time"></li>
+            <!-- <li class="time" id="Sminutes">0</li>
+            <li class="time" id="Sseconds">0</li>
+            <li class="time" id="Smiliseconds">0</li> -->
+        </ul>
+    </section>
+    <section class="timer" id="timer">
+        <header>
+            <h1>
+                Timer
+            </h1>
+        </header>
+        <div class="time-limit">
+            <div>
+                <label for="Tminutes">Minutes</label>
+                <input type="number" class="Timer-input" max="1000" min="0" name="Tminutes" id="Tminutes" placeholder="Minutes" value="0">
+            </div>
+            <div>
+                <label for="Tseconds">Seconds</label>
+                <input type="number" class="Timer-input" max="60" min="0" name="Tseconds" id="Tseconds" placeholder="Seconds" value="0">
+            </div>
+        </div>
+        <ul id="time-container">
+            <li id="timer-time"></li>
+            <!-- <li class="time" id="Sminutes">0</li>
+            <li class="time" id="Sseconds">0</li>
+            <li class="time" id="Smiliseconds">0</li> -->
+        </ul>
+        <div class="timer controls" id="timer-controls">
+            <button id="Start" data-action="Start" value="Start">Start</button>
+            <button id="Stop" data-action="Stop" value="Stop">Stop</button>
+            <!-- <button id="Reset" data-action="Reset">Reset</button> -->
+        </div>
+    </section>
+    <div class="btn" id="btn">
+        <button class="pages" data-page="clock">Clock</button>
+        <button class="pages" data-page="stopwatch">Stopwatch</button>
+        <button class="pages" data-page="timer">Timer</button>
+    </div>
+    <!-- <script src="./index.js"></script> -->
+</body>
+
+</html>
