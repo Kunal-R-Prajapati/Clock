@@ -4,7 +4,7 @@ var Tminutes = 0 , Tseconds = 0;
 var timer_interval = null;
 //Main function to start sti=opwatch and timer
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('#timer').style.display = 'flex';
+    document.querySelector('#clock').style.display = 'flex';
     
     document.querySelector('#stop-time').innerHTML = ` ${Sminutes} : ${Sseconds}`;
     document.querySelector('#timer-time').innerHTML = ` ${Tminutes} : ${Tseconds} Left `;
