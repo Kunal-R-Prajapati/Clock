@@ -61,7 +61,7 @@ You can customize the appearance and behavior of the digital clock, stopwatch, a
 
 The CSS styles can be found in the `style.css` file. You can change colors, font sizes, alignments, and more to match your preferences.
 
-The JavaScript code can be found in the `script.js` file. You can modify the logic, add new features, or improve the existing functionality.
+The JavaScript code can be found in the `index.js` file. You can modify the logic, add new features, or improve the existing functionality.
 
 Feel free to experiment and make the necessary changes to suit your needs.
 
