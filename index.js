@@ -1,8 +1,9 @@
-var Sminutes = 0, Sseconds = 0; //Smilliseconds = 0;
+//Declaring variables
+var Sminutes = 0, Sseconds = 0; 
 var interval = null;
 var Tminutes = 0 , Tseconds = 0;
 var timer_interval = null;
-//Main function to start sti=opwatch and timer
+//Main function to start stopwatch and timer
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#clock').style.display = 'flex';
     
@@ -13,11 +14,13 @@ document.addEventListener('DOMContentLoaded', function () {
             showpage(this.dataset.page);
         }
     })
+    // Event listner for button action of stopwatch
     document.getElementById("stop-controls").querySelectorAll('button').forEach(button => {
         button.onclick = function () {
             action(this.dataset.action);
         }
     })
+    // Event listner for button action for timer
     document.getElementById("timer-controls").querySelectorAll('button').forEach(button => {
         button.onclick = function () {
             timer_action(this.dataset.action);
@@ -25,12 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
 })
+
+// Function to toggling view of differrent sections
 function showpage(page) {
     document.querySelectorAll('section').forEach(section => {
         section.style.display = 'none';
     })
     document.querySelector(`#${page}`).style.display = 'flex';
 }
+// Function to show time
 function time() {
     var currentdate = new Date();
     var date = ` Date: ` + currentdate.getDay() + "/" + currentdate.getMonth() + "/" + currentdate.getFullYear();
@@ -59,12 +65,8 @@ function action(act) {
         reset_watch();
     
 }
+// Function to start stopwatch
 function start_watch() {
-    // Smilliseconds += 1;
-    // if (Smilliseconds == 100) {
-    //     Sseconds++;
-    //     Smilliseconds = 0;
-    // }
     Sseconds++;
     if (Sseconds == 60) {
         Sminutes++;
@@ -72,12 +74,12 @@ function start_watch() {
     }
     document.querySelector('#stop-time').innerHTML = ` ${Sminutes} : ${Sseconds}`;
 }
-
+//Function to stop the stop watch
 function stop_watch() {
     clearInterval(interval);
     interval = null;
 }
-
+// Function to reset the stopwatch
 function reset_watch() {
     clearInterval(interval);
     Sminutes = 0;
@@ -108,7 +110,7 @@ function timer_action(act) {
         stop_timer("Timer stopped by the user !");
     }
 }
-
+//Function to start the timer
 function start_timer() {
     Tseconds--;
     if (Tseconds <= 0 && Tminutes > 0) {
@@ -118,10 +120,9 @@ function start_timer() {
     if (Tminutes == 0 && Tseconds <= 0) {
         stop_timer("Time is Over ! ");
     }
-    
     document.querySelector('#timer-time').innerHTML = `${Tminutes} : ${Tseconds} Left`;
-    
 }
+//Function to stop and reset the timer
 function stop_timer(message){
     document.querySelectorAll('.Timer-input').forEach(input =>  {
         input.disabled = false;
